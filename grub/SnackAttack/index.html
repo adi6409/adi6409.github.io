@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snack Attack - Junk Food Haven</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-indigo-600">Snack Attack</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-indigo-600">About</a>
+        <a href="#menu" class="hover:text-indigo-600">Menu</a>
+        <a href="#blog" class="hover:text-indigo-600">Blog</a>
+        <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+      </div>
+      <div class="md:hidden">
+        <details>
+          <summary class="cursor-pointer text-2xl">&#9776;</summary>
+          <nav class="mt-2 flex flex-col space-y-2 bg-white p-4 rounded shadow">
+            <a href="#about" class="block px-2 py-1 hover:bg-gray-200 rounded">About</a>
+            <a href="#menu" class="block px-2 py-1 hover:bg-gray-200 rounded">Menu</a>
+            <a href="#blog" class="block px-2 py-1 hover:bg-gray-200 rounded">Blog</a>
+            <a href="#faq" class="block px-2 py-1 hover:bg-gray-200 rounded">FAQ</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger Menu -->
+  <div class="fixed top-4 left-4 z-50">
+    <input type="checkbox" id="menu-toggle" class="peer absolute opacity-0">
+    <label for="menu-toggle" class="cursor-pointer text-2xl bg-white p-2 rounded shadow hover:bg-gray-100">&#9776;</label>
+    <div class="fixed inset-0 bg-black bg-opacity-50 items-start justify-start hidden peer-checked:flex z-40">
+      <div class="bg-white h-full w-64 shadow-lg p-6 transform transition-transform duration-300 ease-in-out">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="font-bold text-xl">Jump To</h2>
+          <label for="menu-toggle" class="cursor-pointer text-2xl hover:text-gray-600">&times;</label>
+        </div>
+        <ul class="space-y-3">
+          <li><a href="#hero" class="block px-2 py-1 hover:bg-gray-100 rounded" onclick="document.getElementById('menu-toggle').checked = false">Home</a></li>
+          <li><a href="#about" class="block px-2 py-1 hover:bg-gray-100 rounded" onclick="document.getElementById('menu-toggle').checked = false">About</a></li>
+          <li><a href="#menu" class="block px-2 py-1 hover:bg-gray-100 rounded" onclick="document.getElementById('menu-toggle').checked = false">Menu</a></li>
+          <li><a href="#blog" class="block px-2 py-1 hover:bg-gray-100 rounded" onclick="document.getElementById('menu-toggle').checked = false">Blog</a></li>
+          <li><a href="#faq" class="block px-2 py-1 hover:bg-gray-100 rounded" onclick="document.getElementById('menu-toggle').checked = false">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4">
+    <!-- Hero -->
+    <section id="hero" class="py-16 text-center">
+      <h1 class="text-4xl font-bold mb-4">Welcome to Snack Attack</h1>
+      <p class="text-lg text-gray-600 mb-6">Dive into the wildest, cheesiest treats around!</p>
+      <a href="#menu" class="px-6 py-3 bg-indigo-600 text-white rounded hover:bg-indigo-500">Explore the Menu</a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-semibold mb-4">About Snack Attack</h2>
+      <p class="text-gray-700 leading-relaxed">Crafted by a high school snack enthusiast, Snack Attack brings you the best junk food ideas, reviews, and tips for students craving something fun and tasty!</p>
+    </section>
+
+    <!-- Menu Cards -->
+    <section id="menu" class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-semibold mb-6">Top Junk Food Picks</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Hamburger Card -->
+        <div class="bg-white rounded shadow p-6 flex flex-col items-center">
+          <img src="assets/hamburger.avif" alt="Hamburger" class="rounded mb-4">
+          <h3 class="text-xl font-bold mb-2">Hamburger</h3>
+          <p class="text-gray-600 text-center mb-4">Juicy beef patty with cheese, lettuce, tomato in a soft bun.</p>
+          <input type="checkbox" id="toggle-hamburger" class="peer absolute opacity-0">
+          <label for="toggle-hamburger" class="mt-auto text-indigo-600 hover:underline cursor-pointer">Learn More</label>
+          <div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden peer-checked:flex z-50">
+            <div class="bg-white rounded-lg p-6 max-w-md mx-4 z-50">
+              <h3 class="text-2xl font-bold mb-4">Hamburger Details</h3>
+              <p class="text-gray-700 mb-4">Our hamburger features a 100% beef patty, melted cheddar cheese, fresh lettuce, tomato, and our special sauce on a toasted brioche bun.</p>
+              <label for="toggle-hamburger" class="mt-4 inline-block text-indigo-600 hover:underline cursor-pointer">Close</label>
+            </div>
+          </div>
+        </div>
+        <!-- Pizza Card -->
+        <div class="bg-white rounded shadow p-6 flex flex-col items-center">
+          <img src="assets/pizza.webp" alt="Pizza" class="rounded mb-4">
+          <h3 class="text-xl font-bold mb-2">Pizza</h3>
+          <p class="text-gray-600 text-center mb-4">Classic cheese and pepperoni pizza with a crispy crust.</p>
+          <input type="checkbox" id="toggle-pizza" class="peer absolute opacity-0">
+          <label for="toggle-pizza" class="mt-auto text-indigo-600 hover:underline cursor-pointer">Learn More</label>
+          <div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden peer-checked:flex z-50">
+            <div class="bg-white rounded-lg p-6 max-w-md mx-4 z-50">
+              <h3 class="text-2xl font-bold mb-4">Pizza Details</h3>
+              <p class="text-gray-700 mb-4">Enjoy our hand-tossed pizza topped with mozzarella, tangy tomato sauce, and premium pepperoni, baked to perfection.</p>
+              <label for="toggle-pizza" class="mt-4 inline-block text-indigo-600 hover:underline cursor-pointer">Close</label>
+            </div>
+          </div>
+        </div>
+        <!-- Shawarma Card -->
+        <div class="bg-white rounded shadow p-6 flex flex-col items-center">
+          <img src="assets/shawarma.png" alt="Shawarma" class="rounded mb-4">
+          <h3 class="text-xl font-bold mb-2">Shawarma</h3>
+          <p class="text-gray-600 text-center mb-4">Spiced chicken shawarma wrap with garlic sauce and pickles.</p>
+          <input type="checkbox" id="toggle-shawarma" class="peer absolute opacity-0">
+          <label for="toggle-shawarma" class="mt-auto text-indigo-600 hover:underline cursor-pointer">Learn More</label>
+          <div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden peer-checked:flex z-50">
+            <div class="bg-white rounded-lg p-6 max-w-md mx-4 z-50">
+              <h3 class="text-2xl font-bold mb-4">Shawarma Details</h3>
+              <p class="text-gray-700 mb-4">Try our chicken shawarma wrap with marinated spiced chicken, garlic sauce, fresh vegetables, and pickles in warm pita bread.</p>
+              <label for="toggle-shawarma" class="mt-4 inline-block text-indigo-600 hover:underline cursor-pointer">Close</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-semibold mb-6">Latest Blog Posts</h2>
+      <div class="space-y-6">
+        <!-- Post 1 -->
+        <div class="relative">
+          <input type="checkbox" id="toggle-blog1" class="peer absolute opacity-0">
+          <article class="bg-white rounded shadow p-6">
+            <h3 class="text-2xl font-bold mb-2">5 DIY Snack Hacks</h3>
+            <p class="text-gray-600 mb-4">Quick and creative snack ideas you can make in minutes.</p>
+            <label for="toggle-blog1" class="text-indigo-600 hover:underline cursor-pointer">Continue Reading →</label>
+          </article>
+          <div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden peer-checked:flex z-50">
+            <div class="bg-white rounded-lg p-6 max-w-lg mx-4 z-50">
+              <h3 class="text-2xl font-bold mb-4">5 DIY Snack Hacks</h3>
+              <p class="text-gray-700 mb-4">Elevate your snack game with these five simple hacks:</p>
+              <ol class="list-decimal list-inside text-gray-700 mb-4">
+                <li><strong>Loaded Popcorn:</strong> Drizzle melted butter, cheese powder, and chili flakes over popcorn.</li>
+                <li><strong>Nacho Dip Cups:</strong> Use small tortilla bowls filled with layered nacho ingredients.</li>
+                <li><strong>Fruit Skewer Sundaes:</strong> Skewer fruits and top with whipped cream and sprinkles.</li>
+                <li><strong>Mini Pizza Toasts:</strong> Toast bread, add sauce, cheese, and bake until bubbly.</li>
+                <li><strong>Chocolate-Dipped Pretzels:</strong> Dip pretzels in melted chocolate and let set.</li>
+              </ol>
+              <label for="toggle-blog1" class="mt-4 inline-block text-indigo-600 hover:underline cursor-pointer">Close</label>
+            </div>
+          </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="relative">
+          <input type="checkbox" id="toggle-blog2" class="peer absolute opacity-0">
+          <article class="bg-white rounded shadow p-6">
+            <h3 class="text-2xl font-bold mb-2">Ultimate Soda Float Guide</h3>
+            <p class="text-gray-600 mb-4">Fizz meets cream—learn how to build the perfect float.</p>
+            <label for="toggle-blog2" class="text-indigo-600 hover:underline cursor-pointer">Continue Reading →</label>
+          </article>
+          <div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center hidden peer-checked:flex z-50">
+            <div class="bg-white rounded-lg p-6 max-w-lg mx-4 z-50">
+              <h3 class="text-2xl font-bold mb-4">Ultimate Soda Float Guide</h3>
+              <p class="text-gray-700 mb-4">Discover how to craft the perfect soda float:</p>
+              <ul class="list-disc list-inside text-gray-700 mb-4">
+                <li><strong>Choose Your Base:</strong> Root beer, cola, or flavored soda.</li>
+                <li><strong>Select Ice Cream:</strong> Vanilla, chocolate, or fruit sorbet.</li>
+                <li><strong>Glass Prep:</strong> Chill your glass beforehand.</li>
+                <li><strong>Pour & Scoop:</strong> Add ice cream first, then slowly pour soda.</li>
+                <li><strong>Garnish:</strong> Add a cherry, sprinkles, or mint leaf.</li>
+              </ul>
+              <label for="toggle-blog2" class="mt-4 inline-block text-indigo-600 hover:underline cursor-pointer">Close</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container mx-auto px-4 py-8">
+      <h2 class="text-3xl font-semibold mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <details class="bg-white rounded shadow p-4">
+          <summary class="cursor-pointer font-medium">What's Snack Attack's mission?</summary>
+          <p class="mt-2 text-gray-700">To bring students the most fun and delicious junk food options out there.</p>
+        </details>
+        <details class="bg-white rounded shadow p-4">
+          <summary class="cursor-pointer font-medium">Can I share my own snack recipes?</summary>
+          <p class="mt-2 text-gray-700">Definitely—drop your favorite recipe ideas in the comments of our blog posts.</p>
+        </details>
+        <details class="bg-white rounded shadow p-4">
+          <summary class="cursor-pointer font-medium">Is all content free?</summary>
+          <p class="mt-2 text-gray-700">Yes—Snack Attack is free for everyone to explore and enjoy.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow mt-8">
+      <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600">&copy; 2025 Snack Attack. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+          if (this.checked) {
+            // Uncheck all other checkboxes
+            checkboxes.forEach(otherCheckbox => {
+              if (otherCheckbox !== this) {
+                otherCheckbox.checked = false;
+              }
+            });
+            document.body.classList.add('overflow-hidden');
+          } else {
+            document.body.classList.remove('overflow-hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
